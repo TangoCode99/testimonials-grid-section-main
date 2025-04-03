@@ -1,3 +1,184 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;600&display=swap');
+
+:root {
+    /* Primary */
+    --Purple50: hsl(260, 100%, 95%);
+    --Purple300: hsl(264, 82%, 80%);
+    --Purple500: hsl(263, 55%, 52%);
+    /* Neutral */
+    --White: hsl(0, 0%, 100%);
+    --Grey100: hsl(214, 17%, 92%);
+    --Grey200: hsl(0, 0%, 81%);
+    --Grey400: hsl(224, 10%, 45%);
+    --Grey500: hsl(217, 19%, 35%);
+    --Darkblue: hsl(219, 29%, 14%);
+    --Black: hsl(0, 0%, 7%);
+}
+
+
+.medium {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.semibold {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    font-family: "Barlow Semi Condensed", sans-serif;
+    margin: 3rem 0px;
+    padding: 0px;
+    background-color: var(--Grey100);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+}
+
+.daniel {
+    color: var(--White);
+    background-color: var(--Purple500);
+
+    img {
+        border: 2px solid var(--Purple300);
+    }
+}
+
+.jonathan {
+    color: var(--White);
+    background-color: var(--Grey500);
+
+    img {
+        border: 2px solid var(--Grey400);
+    }
+}
+
+.jeanette {
+    color: var(--Darkblue);
+    background-color: var(--White);
+}
+
+.patrick {
+    color: var(--White);
+    background-color: var(--Darkblue);
+
+    img {
+        border: 2px solid var(--Purple500);
+    }
+}
+
+.kira {
+    color: var(--Grey500);
+    background-color: var(--White);
+}
+
+.card {
+    margin: 10px;
+    padding: 30px;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 10px;
+}
+
+.card-avatar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 50px;
+}
+
+.avatar {
+    width: 40px;
+    border-radius: 100%;
+    margin-right: 25px;
+}
+
+.person-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 35px;
+}
+
+.name {
+    font-size: 15px;
+}
+
+.title {
+    font-size: 13px;
+}
+
+.card-title {
+    margin: 10px 0px 20px;
+    font-size: 20px;
+}
+
+.card-quote {
+    margin: 20px 0px 0px;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+@media screen and (min-width: 1040px) {
+
+    body {
+        min-height: 100vh;
+        margin: 0px 8rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .layout {
+        margin-top: 35px;
+        height: 80vh;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0px;
+        grid-template-areas:
+            "one one two five"
+            "three four four five";
+    }
+
+    .daniel {
+        grid-area: one;
+        background-image: url("/images/bg-pattern-quotation.svg");
+        background-repeat: no-repeat;
+        background-position: 80% 0%;
+    }
+
+    .jonathan {
+        grid-area: two;
+    }
+
+    .jeanette {
+        grid-area: three;
+    }
+
+    .patrick {
+        grid-area: four;
+    }
+
+    .kira {
+        grid-area: five;
+    }
+
+    .card {
+        max-width: fit-content;
+    }
+
+    .card-quote {
+        font-size: 13px;
+        line-height: 17px;
+    }
+}
